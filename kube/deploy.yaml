@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rhys-oomps
+spec:
+  selector:
+    matchLabels:
+      app: rhys-oomps
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rhys-oomps
+    spec:
+      containers:
+      - image: rhysemmas/oomps:3.0 # 2gb allocator
+        imagePullPolicy: Always
+        name: oomps
+        resources:
+          requests:
+            memory: "1Gi"

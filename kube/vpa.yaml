@@ -1,0 +1,19 @@
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: rhys-oomps
+  labels:
+    app: rhys-oomps
+spec:
+  updatePolicy:
+    updateMode: "Auto"
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: rhys-oomps
+  # resourcePolicy:
+  #   containerPolicies:
+  #   - containerName: '*'
+  #     minAllowed:
+  #       memory: 25Mi
