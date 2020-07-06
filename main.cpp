@@ -16,7 +16,10 @@ using namespace std;
 int main()
 {
   int n = NUM_CHUNKS;
-  void * ptr[NUM_CHUNKS];
+  // allocate on the heap - very large arrays will not fit on the stack
+  // the line commented out below will be ok for the 2gb example
+  //void * ptr[NUM_CHUNKS];
+  void **ptr = new void*[NUM_CHUNKS];
 
   for (int i = 0; i < n; i++)
   // with i being less than n, we should be short 1 * 4k block
