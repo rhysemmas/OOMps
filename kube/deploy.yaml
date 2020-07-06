@@ -14,9 +14,13 @@ spec:
         app: rhys-oomps
     spec:
       containers:
-      - image: rhysemmas/oomps:3.0-dev # 2gb allocator
+      - image: rhysemmas/oomps:4.1-dev # 2gb allocator
         imagePullPolicy: Always
         name: oomps
         resources:
           requests:
             memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "800m"

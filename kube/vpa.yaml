@@ -9,11 +9,6 @@ spec:
   updatePolicy:
     updateMode: "Auto"
   targetRef:
-    apiVersion: "apps/v1"
+    apiVersion: apps/v1
     kind: Deployment
     name: rhys-oomps
-  # resourcePolicy:
-  #   containerPolicies:
-  #   - containerName: '*'
-  #     minAllowed:
-  #       memory: 25Mi
