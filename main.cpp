@@ -22,7 +22,6 @@ int main()
   void **ptr = new void*[NUM_CHUNKS];
 
   for (int i = 0; i < n; i++)
-  // with i being less than n, we should be short 1 * 4k block
   {
     ptr[i] = malloc(CHUNK_SIZE);
     // malloc returns a pointer to the start of a the block
@@ -34,7 +33,7 @@ int main()
     }
     else
     {
-      // memory allocated, set memory chunk to zero's
+      // memory allocated, set memory chunk to zeros
       cout << "Initialising allocated block" << endl;
       memset(ptr, 0, CHUNK_SIZE);
 
