@@ -33,7 +33,7 @@ int main()
     }
     else
     {
-      // memory allocated, set memory chunk to zero's
+      // memory allocated, set memory chunk to zeros
       cout << "Initialising allocated block" << endl;
       memset(ptr, 0, CHUNK_SIZE);
 
